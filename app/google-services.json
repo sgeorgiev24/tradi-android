@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "759606008524",
+    "project_id": "tradi-8a7c9",
+    "storage_bucket": "tradi-8a7c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759606008524:android:f2feae1de433f28fee8069",
+        "android_client_info": {
+          "package_name": "com.github.sgeorgiev24.tradi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759606008524-k6825dj7sr8r5arruak7mrip6fmhe0de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBebSkuwjbVFcGAmtPkBHqgvwlEmnfzuxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759606008524-k6825dj7sr8r5arruak7mrip6fmhe0de.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759606008524:android:1a54ee428f4a9b5dee8069",
+        "android_client_info": {
+          "package_name": "com.github.sgeorgiev24.tradi.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759606008524-k6825dj7sr8r5arruak7mrip6fmhe0de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBebSkuwjbVFcGAmtPkBHqgvwlEmnfzuxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759606008524-k6825dj7sr8r5arruak7mrip6fmhe0de.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,6 +10,7 @@ plugins {
 dependencies {
     implementation(projects.modules.domain.model)
     implementation(projects.modules.presentation)
+    implementation(projects.modules.common.ui)
 
     implementation(AppDependencies.appcompat)
     implementation(AppDependencies.androidStartup)

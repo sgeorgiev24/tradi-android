@@ -17,7 +17,7 @@ import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationDispatcher
 import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.AuthDests
 import com.github.sgeorgiev24.tradi.presentation.navigation.wrapper.composableHolder
 import com.github.sgeorgiev24.tradi.presentation.view.auth.signup.SignUpScreen
-import com.github.sgeorgiev24.tradi.ui.theme.TradiTheme
+import com.github.sgeorgiev24.tradi.theme.TradiTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.navigation.material.BottomSheetNavigator

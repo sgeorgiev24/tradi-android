@@ -6,13 +6,10 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.modules.common.ui)
     implementation(projects.modules.domain.model)
+
     implementation(AppDependencies.kotlin)
-    implementation(AppDependencies.chromeTabs)
     hilt()
     implementation(AppDependencies.coroutines)
-    implementation(AppDependencies.timber)
-    implementation(AppDependencies.composeNavigation)
     implementation(AppDependencies.accompanist)
 }

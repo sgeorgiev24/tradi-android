@@ -19,4 +19,11 @@
     <string name="ui_success_sign_up">Successfully registered!</string>
     <string name="ui_success_add_vip">VIP added successfully</string>
     <string name="ui_failed_to_sign_out">Sign out error. Please try again.</string>
+
+    <!-- Snackbar resources -->
+    <string name="undo_action">Undo</string>
+    <string name="dismiss_action">Dismiss</string>
+    <string name="error_title">Error</string>
+    <string name="info_title">Info</string>
+    <string name="success_title">Success</string>
 </resources>

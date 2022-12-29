@@ -2,16 +2,12 @@ import AppDependencies.hilt
 
 plugins {
     library()
-    compose()
 }
 
 dependencies {
-    implementation(projects.modules.domain.model)
     implementation(AppDependencies.kotlin)
-    implementation(AppDependencies.chromeTabs)
+    implementation(AppDependencies.composeRuntime)
     hilt()
     implementation(AppDependencies.coroutines)
     implementation(AppDependencies.timber)
-    implementation(AppDependencies.composeNavigation)
-    implementation(AppDependencies.accompanist)
 }

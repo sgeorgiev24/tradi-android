@@ -1,4 +1,3 @@
 package com.github.sgeorgiev24.tradi.presentation.view.auth.signup.mvi
 
-class SignUpState {
-}
+class SignUpState

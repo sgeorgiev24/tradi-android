@@ -2,6 +2,7 @@ rootProject.name = ("Tradi")
 include(
     "app",
     "modules:presentation",
+    "modules:domain:model",
     "modules:providers:firebase"
 )
 

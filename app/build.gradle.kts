@@ -8,7 +8,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":modules:presentation"))
+    implementation(projects.modules.domain.model)
+    implementation(projects.modules.presentation)
 
     implementation(AppDependencies.appcompat)
     implementation(AppDependencies.androidStartup)

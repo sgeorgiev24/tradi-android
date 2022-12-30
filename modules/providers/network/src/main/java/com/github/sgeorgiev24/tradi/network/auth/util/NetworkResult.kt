@@ -1,4 +1,4 @@
-package com.github.sgeorgiev24.tradi.util
+package com.github.sgeorgiev24.tradi.network.auth.util
 
 /**
  * A generic class that holds a value with its loading status.

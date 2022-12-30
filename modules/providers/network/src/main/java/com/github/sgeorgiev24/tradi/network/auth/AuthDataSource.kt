@@ -1,6 +1,6 @@
-package com.github.sgeorgiev24.tradi.auth
+package com.github.sgeorgiev24.tradi.network.auth
 
-import com.github.sgeorgiev24.tradi.util.NetworkResult
+import com.github.sgeorgiev24.tradi.network.auth.util.NetworkResult
 
 interface AuthDataSource {
     suspend fun signUp(

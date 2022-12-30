@@ -4,7 +4,7 @@ include(
     "modules:common:ui",
     "modules:presentation",
     "modules:domain:model",
-    "modules:providers:firebase"
+    "modules:providers:network"
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

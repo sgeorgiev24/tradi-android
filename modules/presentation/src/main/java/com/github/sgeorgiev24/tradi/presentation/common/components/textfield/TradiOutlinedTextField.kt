@@ -59,7 +59,7 @@ fun TradiOutlinedTextField(
 
     val lostFocusOnce = remember { mutableStateOf(false) }
 
-    val isError = inputWrapper.errorId != null
+    val isError = inputWrapper.errorResId != null && !focused.value
 
     TradiBaseOutlinedTextField(
         modifier = modifier
@@ -80,7 +80,7 @@ fun TradiOutlinedTextField(
         readOnly = readOnly,
         enabled = enabled,
         isError = isError,
-        errorTextResId = inputWrapper.errorId,
+        errorTextResId = inputWrapper.errorResId,
         horizontalAlignment = horizontalAlignment,
         leadingIcon = leadingIcon,
         trailingIconError = trailingIconError,

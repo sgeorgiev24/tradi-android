@@ -65,7 +65,7 @@ fun SignUpContent(
             TradiOutlinedTextField(
                 inputWrapper = state.confirmPassword,
                 label = stringResource(id = R.string.sign_up_confirm_password),
-                keyboardActions = KeyboardActions(onNext = { action(SignUpAction.OnDoneActionClick) }),
+                keyboardActions = KeyboardActions(onDone = { action(SignUpAction.OnDoneActionClick) }),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Password,
                     imeAction = ImeAction.Done,

@@ -5,8 +5,8 @@ import androidx.annotation.StringRes
 data class InputWrapper(
     val value: String = "",
     @StringRes
-    val errorId: Int? = null
+    val errorResId: Int? = null
 ) {
     val isValid: Boolean
-        get() = value.isNotBlank() && errorId == null
+        get() = value.isNotBlank() && errorResId == null
 }

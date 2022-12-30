@@ -78,7 +78,6 @@ fun <Result> buildError(
 }
 
 fun <Result> buildError(
-    errors: Map<String, String>,
     stateEvent: StateEvent,
     messageType: MessageType = Error.General.Unknown,
     message: String?
@@ -87,7 +86,6 @@ fun <Result> buildError(
         stateEvent = stateEvent,
         response = Response(
             message = message ?: "",
-            errors = errors,
             messageType = messageType
         )
     )

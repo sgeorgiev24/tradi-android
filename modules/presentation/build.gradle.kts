@@ -6,6 +6,9 @@ plugins {
 }
 
 dependencies {
+    implementation(projects.modules.domain.interactor)
+    implementation(projects.modules.common.ui)
+    implementation(projects.modules.domain.model)
     implementation(AppDependencies.kotlin)
     implementation(AppDependencies.chromeTabs)
     hilt()

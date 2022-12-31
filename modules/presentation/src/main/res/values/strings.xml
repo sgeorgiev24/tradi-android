@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ui Events -->
+    <string name="ui_event_info">Info</string>
+    <string name="ui_event_error">Error</string>
+    <string name="ui_event_success">Success</string>
+    <string name="ui_event_none"> </string>
+
+    <string name="ui_error_wrong_credentials">Wrong credentials</string>
+    <string name="ui_error_server_error">Unable to reach the server. Please try again later.</string>
+    <string name="ui_error_unknown">Unknown error.</string>
+    <string name="ui_error_network">Network error. Please check your internet connection.</string>
+    <string name="ui_error_unauthorized">Unauthorized error.</string>
+    <string name="ui_error_timeout">Request has timed out. Please try again.</string>
+    <string name="ui_error_not_implemented">Not implemented!</string>
+
+    <string name="ui_success_sign_in">Successfully authenticated!</string>
+    <string name="ui_success_saved_data">Successfully saved data!</string>
+    <string name="ui_success_sign_up">Successfully registered!</string>
+    <string name="ui_failed_to_sign_out">Sign out error. Please try again.</string>
+    <string name="ui_failed_to_sign_up">Sign up failed.</string>
+    <string name="ui_failed_to_sign_in">Sign in failed. Please try again.</string>
+
+    <!-- Snackbar resources -->
+    <string name="undo_action">Undo</string>
+    <string name="dismiss_action">Dismiss</string>
+    <string name="error_title">Error</string>
+    <string name="info_title">Info</string>
+    <string name="success_title">Success</string>
+
+    <!-- Validators -->
+    <string name="validator_email_is_invalid">Email is invalid</string>
+    <string name="validator_email_is_empty">Email is empty</string>
+    <string name="validator_password_too_short">Password is too short</string>
+    <string name="validator_passwords_do_not_match">Passwords do not match</string>
+
+    <!-- Sign up -->
+    <string name="sign_up_title">Sign up</string>
+    <string name="sign_up_email">Email</string>
+    <string name="sign_up_password">Password</string>
+    <string name="sign_up_confirm_password">Confirm password</string>
+    <string name="sign_up_sign_up_button">Sign up</string>
+    <string name="sign_up_sign_in_link">Already have an account? Sign in</string>
+
+    <!-- Sign in -->
+    <string name="sign_in_title">Sign in</string>
+    <string name="sign_in_email">Email</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_sign_in_button">Sign in</string>
+    <string name="sign_in_sign_up_link">Don\'t have an account? Sign up</string>
+</resources>

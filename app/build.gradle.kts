@@ -1,4 +1,5 @@
 
+import AppDependencies.firebaseAnnotation
 import AppDependencies.hiltCoroutinesAnnotation
 
 plugins {
@@ -7,7 +8,9 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":modules:presentation"))
+    implementation(projects.modules.domain.model)
+    implementation(projects.modules.presentation)
+    implementation(projects.modules.common.ui)
 
     implementation(AppDependencies.appcompat)
     implementation(AppDependencies.androidStartup)
@@ -20,8 +23,8 @@ dependencies {
     implementation(AppDependencies.kotlin)
     implementation(AppDependencies.composeNavigation)
 
-//    implementPlatform(firebaseAnnotation)
-//    implementation(AppDependencies.firebase)
+    implementPlatform(firebaseAnnotation)
+    implementation(AppDependencies.firebase)
 
     implementation(AppDependencies.retrofit)
 

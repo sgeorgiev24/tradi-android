@@ -4,9 +4,16 @@ import com.github.sgeorgiev24.tradi.presentation.navigation.NavAnimation
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationAction
 
 sealed class AuthDests : NavigationAction {
-    class SignIn : AuthDests() {
+    object SignIn : AuthDests() {
         override val route: String
             get() = "signIn"
+        override val navAnimation: NavAnimation
+            get() = NavAnimation.horizontalSlide()
+    }
+
+    object SignUp : AuthDests() {
+        override val route: String
+            get() = "signUp"
         override val navAnimation: NavAnimation
             get() = NavAnimation.horizontalSlide()
     }

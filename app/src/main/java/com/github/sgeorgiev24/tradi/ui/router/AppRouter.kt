@@ -16,7 +16,9 @@ import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationCommand
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationDispatcher
 import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.AuthDests
 import com.github.sgeorgiev24.tradi.presentation.navigation.wrapper.composableHolder
-import com.github.sgeorgiev24.tradi.ui.theme.TradiTheme
+import com.github.sgeorgiev24.tradi.presentation.view.auth.signin.SignInScreen
+import com.github.sgeorgiev24.tradi.presentation.view.auth.signup.SignUpScreen
+import com.github.sgeorgiev24.tradi.theme.TradiTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.navigation.material.BottomSheetNavigator
@@ -63,7 +65,7 @@ fun AppRouter(
                     AnimatedNavHost(
                         modifier = Modifier.padding(padding),
                         navController = navController,
-                        startDestination = AuthDests.SignIn().route // TODO change this
+                        startDestination = AuthDests.SignIn.route // TODO change this
                     ) {
                         authDestinations()
                     }
@@ -75,8 +77,11 @@ fun AppRouter(
 }
 
 private fun NavGraphBuilder.authDestinations() {
-    composableHolder(AuthDests.SignIn()) {
-        Text(text = "Sign in screen")
+    composableHolder(AuthDests.SignUp) {
+        SignUpScreen()
+    }
+    composableHolder(AuthDests.SignIn) {
+        SignInScreen()
     }
 }
 

@@ -1,4 +1,4 @@
-package com.github.sgeorgiev24.tradi.network.auth.util
+package com.github.sgeorgiev24.tradi.network.util
 
 object NetworkConst {
 

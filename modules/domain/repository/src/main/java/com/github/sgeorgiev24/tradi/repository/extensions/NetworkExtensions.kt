@@ -7,11 +7,11 @@ import com.github.sgeorgiev24.tradi.model.state.StateEvent
 import com.github.sgeorgiev24.tradi.model.state.Success
 import com.github.sgeorgiev24.tradi.model.state.buildError
 import com.github.sgeorgiev24.tradi.model.state.buildSuccessData
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkConst.NETWORK_DATA_NULL
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkConst.NETWORK_ERROR
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkConst.NETWORK_ERROR_UNAUTHORIZED
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkConst.NETWORK_REQUEST_CANCELED
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkResult
+import com.github.sgeorgiev24.tradi.network.util.NetworkConst.NETWORK_DATA_NULL
+import com.github.sgeorgiev24.tradi.network.util.NetworkConst.NETWORK_ERROR
+import com.github.sgeorgiev24.tradi.network.util.NetworkConst.NETWORK_ERROR_UNAUTHORIZED
+import com.github.sgeorgiev24.tradi.network.util.NetworkConst.NETWORK_REQUEST_CANCELED
+import com.github.sgeorgiev24.tradi.network.util.NetworkResult
 
 const val EMPTY_RESPONSE = "204"
 

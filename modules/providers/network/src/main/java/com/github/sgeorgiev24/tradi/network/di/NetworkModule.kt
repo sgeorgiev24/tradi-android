@@ -1,4 +1,4 @@
-package com.github.sgeorgiev24.tradi.network.auth.di
+package com.github.sgeorgiev24.tradi.network.di
 
 import com.github.sgeorgiev24.tradi.network.auth.AuthDataSource
 import com.github.sgeorgiev24.tradi.network.auth.AuthDataSourceImpl

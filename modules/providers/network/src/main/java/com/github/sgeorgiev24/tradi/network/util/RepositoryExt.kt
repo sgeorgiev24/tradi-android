@@ -1,7 +1,7 @@
-package com.github.sgeorgiev24.tradi.network.auth.util
+package com.github.sgeorgiev24.tradi.network.util
 
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkConst.NETWORK_TIMEOUT
-import com.github.sgeorgiev24.tradi.network.auth.util.NetworkConst.UNKNOWN_ERROR
+import com.github.sgeorgiev24.tradi.network.util.NetworkConst.NETWORK_TIMEOUT
+import com.github.sgeorgiev24.tradi.network.util.NetworkConst.UNKNOWN_ERROR
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withContext

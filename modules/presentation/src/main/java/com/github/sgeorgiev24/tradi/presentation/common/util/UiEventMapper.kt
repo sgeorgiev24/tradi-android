@@ -35,7 +35,7 @@ infix fun ComponentType.buildFromClass(
     @StringRes messageRes: Int
 ) = UiEvent(
     message = EMPTY_VALUE,
-    messageRes = messageRes,
+    messageResId = messageRes,
     componentType = this
 )
 
@@ -43,6 +43,6 @@ infix fun String.buildFromMessage(
     componentType: ComponentType
 ) = UiEvent(
     message = this,
-    messageRes = null,
+    messageResId = null,
     componentType = componentType
 )

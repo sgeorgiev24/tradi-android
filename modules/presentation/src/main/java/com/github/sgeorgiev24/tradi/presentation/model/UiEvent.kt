@@ -5,6 +5,6 @@ import androidx.annotation.StringRes
 data class UiEvent(
     val message: String,
     @StringRes
-    val messageRes: Int? = null,
+    val messageResId: Int? = null,
     val componentType: ComponentType,
 )

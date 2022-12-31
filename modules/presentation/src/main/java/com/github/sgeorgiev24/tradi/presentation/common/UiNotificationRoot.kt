@@ -84,7 +84,7 @@ UiNotificationRoot(
     if (!queue.isEmpty()) {
         queue.peek()?.let { response ->
             val message =
-                response.messageRes?.let { stringResource(id = it) } ?: response.message
+                response.messageResId?.let { stringResource(id = it) } ?: response.message
 
             when (response.componentType) {
                 is ComponentType.SnackBarNotification -> {

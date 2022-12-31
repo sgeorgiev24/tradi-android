@@ -64,7 +64,7 @@ fun AppRouter(
                     AnimatedNavHost(
                         modifier = Modifier.padding(padding),
                         navController = navController,
-                        startDestination = AuthDests.SignUp().route // TODO change this
+                        startDestination = AuthDests.SignUp.route // TODO change this
                     ) {
                         authDestinations()
                     }
@@ -76,8 +76,11 @@ fun AppRouter(
 }
 
 private fun NavGraphBuilder.authDestinations() {
-    composableHolder(AuthDests.SignUp()) {
+    composableHolder(AuthDests.SignUp) {
         SignUpScreen()
+    }
+    composableHolder(AuthDests.SignIn) {
+        Text("Registered")
     }
 }
 

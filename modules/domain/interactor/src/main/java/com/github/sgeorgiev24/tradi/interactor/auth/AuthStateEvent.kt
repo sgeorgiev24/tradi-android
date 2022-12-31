@@ -11,4 +11,13 @@ sealed class AuthStateEvent : StateEvent {
         override fun eventName() = "SignUp"
         override fun shouldDisplayProgressBar() = true
     }
+
+    class SignIn(
+        val email: String,
+        val password: String
+    ) : AuthStateEvent() {
+        override fun errorInfo() = "Error while trying to sign in."
+        override fun eventName() = "SignIn"
+        override fun shouldDisplayProgressBar() = true
+    }
 }

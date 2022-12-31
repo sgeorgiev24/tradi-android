@@ -16,6 +16,7 @@ import com.github.sgeorgiev24.tradi.presentation.R
 import com.github.sgeorgiev24.tradi.presentation.common.components.button.TradiButton
 import com.github.sgeorgiev24.tradi.presentation.common.components.container.TradiScreenContainer
 import com.github.sgeorgiev24.tradi.presentation.common.components.text.TradiScreenTitle
+import com.github.sgeorgiev24.tradi.presentation.common.components.text.TradiTextLink
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.TradiOutlinedTextField
 import com.github.sgeorgiev24.tradi.presentation.common.components.util.TradiSpacer
 import com.github.sgeorgiev24.tradi.presentation.view.auth.signin.mvi.SignInAction
@@ -35,6 +36,11 @@ fun SignInContent(
             modifier = Modifier.wrapContentHeight()
         ) {
             TradiScreenTitle(textResId = R.string.sign_in_title)
+
+            TradiTextLink(
+                title = stringResource(R.string.sign_in_sign_up_link),
+                onClick = { action(SignInAction.OnSignUpLinkClick) }
+            )
             TradiSpacer(Dimens.padding_large)
 
             TradiOutlinedTextField(

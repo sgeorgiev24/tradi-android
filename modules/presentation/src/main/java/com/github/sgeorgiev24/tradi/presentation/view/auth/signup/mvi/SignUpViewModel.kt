@@ -34,6 +34,8 @@ constructor(
                 submitEvent(ScreenEvent.MoveFocus())
             SignUpAction.OnRegisterClick ->
                 onRegisterClick()
+            SignUpAction.OnSignInLinkClick ->
+                navigationDispatcher.navigateTo(AuthDests.SignIn)
             is SignUpAction.OnEmailValueChange ->
                 onEmailValueChange(action.value)
             is SignUpAction.OnPasswordValueChange ->

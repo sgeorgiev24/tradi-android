@@ -1,4 +1,4 @@
-package com.github.sgeorgiev24.tradi.presentation.view.auth.signup
+package com.github.sgeorgiev24.tradi.presentation.view.auth.signin
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,14 +18,14 @@ import com.github.sgeorgiev24.tradi.presentation.common.components.container.Tra
 import com.github.sgeorgiev24.tradi.presentation.common.components.text.TradiScreenTitle
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.TradiOutlinedTextField
 import com.github.sgeorgiev24.tradi.presentation.common.components.util.TradiSpacer
-import com.github.sgeorgiev24.tradi.presentation.view.auth.signup.mvi.SignUpAction
-import com.github.sgeorgiev24.tradi.presentation.view.auth.signup.mvi.SignUpState
+import com.github.sgeorgiev24.tradi.presentation.view.auth.signin.mvi.SignInAction
+import com.github.sgeorgiev24.tradi.presentation.view.auth.signin.mvi.SignInState
 import com.github.sgeorgiev24.tradi.theme.Dimens
 
 @Composable
-fun SignUpContent(
-    state: SignUpState,
-    action: (SignUpAction) -> Unit
+fun SignInContent(
+    state: SignInState,
+    action: (SignInAction) -> Unit
 ) {
     TradiScreenContainer(
         modifier = Modifier.fillMaxSize(),
@@ -34,51 +34,38 @@ fun SignUpContent(
         Column(
             modifier = Modifier.wrapContentHeight()
         ) {
-            TradiScreenTitle(textResId = R.string.sign_up_title)
+            TradiScreenTitle(textResId = R.string.sign_in_title)
             TradiSpacer(Dimens.padding_large)
 
             TradiOutlinedTextField(
                 inputWrapper = state.email,
-                label = stringResource(id = R.string.sign_up_email),
-                keyboardActions = KeyboardActions(onNext = { action(SignUpAction.OnNextActionClick) }),
+                label = stringResource(id = R.string.sign_in_email),
+                keyboardActions = KeyboardActions(onNext = { action(SignInAction.OnNextActionClick) }),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Email,
                     imeAction = ImeAction.Next,
                 ),
-                onTextChanged = { text, _ -> action(SignUpAction.OnEmailValueChange(text)) },
+                onTextChanged = { text, _ -> action(SignInAction.OnEmailValueChange(text)) },
             )
             TradiSpacer()
 
             TradiOutlinedTextField(
                 inputWrapper = state.password,
-                label = stringResource(id = R.string.sign_up_password),
-                keyboardActions = KeyboardActions(onNext = { action(SignUpAction.OnNextActionClick) }),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Password,
-                    imeAction = ImeAction.Next,
-                ),
-                onTextChanged = { text, _ -> action(SignUpAction.OnPasswordValueChange(text)) },
-                visualTransformation = PasswordVisualTransformation()
-            )
-            TradiSpacer()
-
-            TradiOutlinedTextField(
-                inputWrapper = state.confirmPassword,
-                label = stringResource(id = R.string.sign_up_confirm_password),
-                keyboardActions = KeyboardActions(onDone = { action(SignUpAction.OnDoneActionClick) }),
+                label = stringResource(id = R.string.sign_in_password),
+                keyboardActions = KeyboardActions(onDone = { action(SignInAction.OnDoneActionClick) }),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Password,
                     imeAction = ImeAction.Done,
                 ),
-                onTextChanged = { text, _ -> action(SignUpAction.OnConfirmPasswordValueChange(text)) },
+                onTextChanged = { text, _ -> action(SignInAction.OnPasswordValueChange(text)) },
                 visualTransformation = PasswordVisualTransformation()
             )
             TradiSpacer(Dimens.padding_large)
 
             TradiButton(
-                enabled = state.isRegisterButtonEnabled,
-                titleResId = R.string.sign_up_sign_up_button,
-                onClick = { action(SignUpAction.OnRegisterClick) }
+                enabled = state.isLoginButtonEnabled,
+                titleResId = R.string.sign_in_sign_in_button,
+                onClick = { action(SignInAction.OnSignInClick) }
             )
         }
     }

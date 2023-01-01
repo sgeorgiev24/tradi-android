@@ -33,8 +33,8 @@ constructor(
                 submitEvent(ScreenEvent.ClearFocus)
             SignUpAction.OnNextActionClick ->
                 submitEvent(ScreenEvent.MoveFocus())
-            SignUpAction.OnRegisterClick ->
-                onRegisterClick()
+            SignUpAction.OnSignUpClick ->
+                onSignUpClick()
             SignUpAction.OnSignInLinkClick ->
                 navigationDispatcher.navigateTo(AuthDests.SignIn)
             is SignUpAction.OnEmailValueChange ->
@@ -48,7 +48,7 @@ constructor(
         }
     }
 
-    private suspend fun onRegisterClick() {
+    private suspend fun onSignUpClick() {
         val event = AuthStateEvent.SignUp(
             email = state.value.email.value,
             password = state.value.password.value
@@ -57,11 +57,11 @@ constructor(
             addStateEvent(event)
             signUp(event).also { dataState ->
                 dataState.data?.let {
-                    Timber.i("Successfully registered.")
+                    Timber.i("Successfully signed up.")
                     navigationDispatcher.navigateTo(AuthDests.SignIn)
                 } ?: run {
                     buildSignUpFailMessage(dataState.response?.message)
-                    Timber.e("Failed to register.")
+                    Timber.e("Failed to sign up.")
                 }
                 dataState.stateEvent?.let { removeStateEvent(it) }
             }

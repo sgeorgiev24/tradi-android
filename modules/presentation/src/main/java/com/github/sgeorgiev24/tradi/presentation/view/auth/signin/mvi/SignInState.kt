@@ -6,6 +6,6 @@ data class SignInState(
     val email: InputWrapper = InputWrapper(),
     val password: InputWrapper = InputWrapper(),
 ) {
-    val isLoginButtonEnabled: Boolean
+    val isSignInButtonEnabled: Boolean
         get() = email.isValid && password.isValid
 }

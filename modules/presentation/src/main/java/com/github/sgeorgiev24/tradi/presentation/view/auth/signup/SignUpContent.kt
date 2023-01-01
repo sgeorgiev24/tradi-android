@@ -94,9 +94,9 @@ fun SignUpContent(
             TradiSpacer(Dimens.padding_large)
 
             TradiButton(
-                enabled = state.isRegisterButtonEnabled,
+                enabled = state.isSignUpButtonEnabled,
                 titleResId = R.string.sign_up_sign_up_button,
-                onClick = { action(SignUpAction.OnRegisterClick) }
+                onClick = { action(SignUpAction.OnSignUpClick) }
             )
         }
     }

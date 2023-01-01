@@ -8,7 +8,7 @@ data class SignUpState(
     val password: InputWrapper = InputWrapper(),
     val confirmPassword: InputWrapper = InputWrapper()
 ) {
-    val isRegisterButtonEnabled: Boolean
+    val isSignUpButtonEnabled: Boolean
         get() = email.isValid &&
             name.isValid &&
             password.isValid &&

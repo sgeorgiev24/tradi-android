@@ -13,6 +13,7 @@ constructor(
     ) = authRepository.signUp(
         event = stateEvent,
         email = stateEvent.email,
+        name = stateEvent.name,
         password = stateEvent.password
     )
 }

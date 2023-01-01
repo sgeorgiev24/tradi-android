@@ -13,6 +13,7 @@ import com.github.sgeorgiev24.tradi.presentation.model.ComponentType
 import com.github.sgeorgiev24.tradi.presentation.model.UiEvent
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationDispatcher
 import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.AuthDests
+import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.MainDests
 import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
 import javax.inject.Inject
@@ -51,6 +52,7 @@ constructor(
     private suspend fun onSignUpClick() {
         val event = AuthStateEvent.SignUp(
             email = state.value.email.value,
+            name = state.value.name.value,
             password = state.value.password.value
         )
         if (canExecuteNewStateEvent(event)) {
@@ -58,7 +60,7 @@ constructor(
             signUp(event).also { dataState ->
                 dataState.data?.let {
                     Timber.i("Successfully signed up.")
-                    navigationDispatcher.navigateTo(AuthDests.SignIn)
+                    navigationDispatcher.navigateTo(MainDests.Home)
                 } ?: run {
                     buildSignUpFailMessage(dataState.response?.message)
                     Timber.e("Failed to sign up.")

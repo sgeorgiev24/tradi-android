@@ -13,6 +13,7 @@ import com.github.sgeorgiev24.tradi.presentation.model.ComponentType
 import com.github.sgeorgiev24.tradi.presentation.model.UiEvent
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationDispatcher
 import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.AuthDests
+import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.MainDests
 import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
 import javax.inject.Inject
@@ -55,7 +56,7 @@ constructor(
             signIn(event).also { dataState ->
                 dataState.data?.let {
                     Timber.i("Successfully signed in.")
-                    navigationDispatcher.navigateTo(AuthDests.SignUp)
+                    navigationDispatcher.navigateTo(MainDests.Home)
                 } ?: run {
                     buildSignInFailMessage(dataState.response?.message)
                     Timber.e("Failed to sign in.")

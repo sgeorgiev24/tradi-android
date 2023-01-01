@@ -6,6 +6,7 @@ import com.github.sgeorgiev24.tradi.network.util.NetworkResult
 interface AuthDataSource {
     suspend fun signUp(
         email: String,
+        name: String,
         password: String
     ): NetworkResult<Unit>
 

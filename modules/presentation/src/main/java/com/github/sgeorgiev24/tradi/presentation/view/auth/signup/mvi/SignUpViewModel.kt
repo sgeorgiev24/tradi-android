@@ -3,6 +3,8 @@ package com.github.sgeorgiev24.tradi.presentation.view.auth.signup.mvi
 import androidx.lifecycle.SavedStateHandle
 import com.github.sgeorgiev24.tradi.interactor.auth.AuthStateEvent
 import com.github.sgeorgiev24.tradi.interactor.auth.SignUp
+import com.github.sgeorgiev24.tradi.interactor.user.SetTmpUser
+import com.github.sgeorgiev24.tradi.interactor.user.UserStateEvent
 import com.github.sgeorgiev24.tradi.presentation.common.BaseViewModel
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.InputWrapper
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.ScreenEvent
@@ -24,7 +26,8 @@ class SignUpViewModel
 constructor(
     savedStateHandle: SavedStateHandle,
     private val navigationDispatcher: NavigationDispatcher,
-    private val signUp: SignUp
+    private val signUp: SignUp,
+    private val setTmpUser: SetTmpUser
 ) : BaseViewModel<SignUpState, SignUpAction, ScreenEvent>(
     savedStateHandle, SignUpState()
 ) {
@@ -60,12 +63,27 @@ constructor(
             signUp(event).also { dataState ->
                 dataState.data?.let {
                     Timber.i("Successfully signed up.")
+                    setTmpUser(
+                        email = state.value.email.value,
+                        name = state.value.name.value
+                    )
                     navigationDispatcher.navigateTo(MainDests.Home)
                 } ?: run {
                     buildSignUpFailMessage(dataState.response?.message)
                     Timber.e("Failed to sign up.")
                 }
                 dataState.stateEvent?.let { removeStateEvent(it) }
+            }
+        }
+    }
+
+    private suspend fun setTmpUser(email: String, name: String) {
+        val event = UserStateEvent.SetTmpUser(email, name)
+        setTmpUser(event).also { dataState ->
+            dataState.data?.let {
+                Timber.i("Successfully saved the user.")
+            } ?: run {
+                Timber.i("Failed to save the user.")
             }
         }
     }

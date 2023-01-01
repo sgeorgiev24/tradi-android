@@ -1,7 +1,9 @@
 package com.github.sgeorgiev24.tradi.repository.auth
 
 import com.github.sgeorgiev24.tradi.model.state.StateEvent
+import com.github.sgeorgiev24.tradi.model.state.map
 import com.github.sgeorgiev24.tradi.network.auth.AuthDataSource
+import com.github.sgeorgiev24.tradi.repository.auth.mapper.toDomain
 import com.github.sgeorgiev24.tradi.repository.extensions.toDataState
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -25,4 +27,10 @@ constructor(
         password: String
     ) = authDataSource.signIn(email, password)
         .toDataState(event)
+
+    suspend fun getUser(
+        event: StateEvent
+    ) = authDataSource.getUser()
+        .toDataState(event)
+        .map { it?.toDomain() }
 }

@@ -1,5 +1,6 @@
 package com.github.sgeorgiev24.tradi.network.auth
 
+import com.github.sgeorgiev24.tradi.network.auth.model.TradiUserDto
 import com.github.sgeorgiev24.tradi.network.util.NetworkResult
 
 interface AuthDataSource {
@@ -12,4 +13,6 @@ interface AuthDataSource {
         email: String,
         password: String
     ): NetworkResult<Unit>
+
+    suspend fun getUser(): NetworkResult<TradiUserDto?>
 }

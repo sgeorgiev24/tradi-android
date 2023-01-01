@@ -3,6 +3,7 @@ package com.github.sgeorgiev24.tradi.ui.router
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationDispatcher
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,6 +15,7 @@ class MainActivity : ComponentActivity() {
     lateinit var navigationDispatcher: NavigationDispatcher
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, true)
 

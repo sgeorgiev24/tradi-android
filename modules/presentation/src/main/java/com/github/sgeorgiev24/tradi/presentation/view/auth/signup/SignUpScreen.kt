@@ -1,12 +1,15 @@
 package com.github.sgeorgiev24.tradi.presentation.view.auth.signup
 
+import android.app.Activity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.github.sgeorgiev24.tradi.presentation.common.RootScreen
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.ScreenEvent
+import com.github.sgeorgiev24.tradi.presentation.common.components.util.TradiBackPressHandler
 import com.github.sgeorgiev24.tradi.presentation.view.auth.signup.mvi.SignUpViewModel
 
 @Composable
@@ -14,6 +17,13 @@ fun SignUpScreen() {
     val viewModel = hiltViewModel<SignUpViewModel>()
     val state by viewModel.state.collectAsState()
     val focusManager = LocalFocusManager.current
+    val activity = LocalContext.current as Activity
+
+    TradiBackPressHandler(
+        onBackPressed = {
+            activity.finish()
+        }
+    )
 
     RootScreen(
         viewModel = viewModel,

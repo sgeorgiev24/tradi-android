@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import com.github.sgeorgiev24.tradi.presentation.common.components.bottombar.mvi.BottomNavigationAction
 import com.github.sgeorgiev24.tradi.presentation.common.components.bottombar.mvi.BottomNavigationState
+import com.github.sgeorgiev24.tradi.theme.TradiTheme
 
 @Composable
 fun TradiBottomBarContent(
@@ -23,9 +24,9 @@ fun TradiBottomBarContent(
     BottomNavigation(
         modifier = Modifier
             .fillMaxWidth()
-//            .padding(vertical = Dimens.grid_0_5)
             .height(60.dp),
-        elevation = 0.dp
+        elevation = 0.dp,
+        backgroundColor = TradiTheme.colors.background
     ) {
         state.bottomNavItems.forEach { navItem ->
             val isSelected = navBackStackEntry.destination.route == navItem.destination.route
@@ -40,7 +41,7 @@ fun TradiBottomBarContent(
                     )
                 },
                 label = {
-                    BottomBarLabel(labelRes = navItem.labelResId, isSelected = isSelected)
+                    BottomBarLabel(labelResId = navItem.labelResId, isSelected = isSelected)
                 },
                 selected = isSelected,
                 onClick = {

@@ -17,6 +17,7 @@ dependencies {
     implementation(AppDependencies.coreKtx)
 
     implementation(AppDependencies.lifecycleLog)
+    implementation(AppDependencies.splash)
 
     hiltCoroutinesAnnotation()
     implementation(AppDependencies.lifecycle)

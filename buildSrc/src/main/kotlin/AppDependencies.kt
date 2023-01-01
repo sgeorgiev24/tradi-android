@@ -19,6 +19,7 @@ object AppDependencies {
         const val googleServices = "4.3.10"
         const val leakCanary = "2.2"
         const val timber = "4.7.1"
+        const val splash = "1.0.0-beta02"
         const val splashScreen = "1.0.0"
         const val chromeTabs = "1.4.0"
         const val lumberJack = "5.2.0"
@@ -32,6 +33,7 @@ object AppDependencies {
     const val fragment = "androidx.fragment:fragment-ktx:1.3.6"
     const val timber = "com.jakewharton.timber:timber:${Version.timber}"
     const val lumberjack = "com.github.MFlisar.Lumberjack:lumberjack-library:${Version.lumberJack}"
+    const val splash = "androidx.core:core-splashscreen:${Version.splash}"
     const val lifecycleLog = "com.github.Chesire:LifecykleLog:${Version.lifecycleLog}"
     const val chromeTabs = "androidx.browser:browser:${Version.chromeTabs}"
 

@@ -69,7 +69,7 @@ fun SignInContent(
             TradiSpacer(Dimens.padding_large)
 
             TradiButton(
-                enabled = state.isLoginButtonEnabled,
+                enabled = state.isSignInButtonEnabled,
                 titleResId = R.string.sign_in_sign_in_button,
                 onClick = { action(SignInAction.OnSignInClick) }
             )

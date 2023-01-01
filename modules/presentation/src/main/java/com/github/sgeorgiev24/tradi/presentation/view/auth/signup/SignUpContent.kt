@@ -56,6 +56,18 @@ fun SignUpContent(
             TradiSpacer()
 
             TradiOutlinedTextField(
+                inputWrapper = state.name,
+                label = stringResource(id = R.string.sign_up_name),
+                keyboardActions = KeyboardActions(onNext = { action(SignUpAction.OnNextActionClick) }),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Text,
+                    imeAction = ImeAction.Next,
+                ),
+                onTextChanged = { text, _ -> action(SignUpAction.OnNameValueChange(text)) },
+            )
+            TradiSpacer()
+
+            TradiOutlinedTextField(
                 inputWrapper = state.password,
                 label = stringResource(id = R.string.sign_up_password),
                 keyboardActions = KeyboardActions(onNext = { action(SignUpAction.OnNextActionClick) }),
@@ -82,9 +94,9 @@ fun SignUpContent(
             TradiSpacer(Dimens.padding_large)
 
             TradiButton(
-                enabled = state.isRegisterButtonEnabled,
+                enabled = state.isSignUpButtonEnabled,
                 titleResId = R.string.sign_up_sign_up_button,
-                onClick = { action(SignUpAction.OnRegisterClick) }
+                onClick = { action(SignUpAction.OnSignUpClick) }
             )
         }
     }

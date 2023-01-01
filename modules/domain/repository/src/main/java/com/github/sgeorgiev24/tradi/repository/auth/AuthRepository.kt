@@ -17,8 +17,9 @@ constructor(
     suspend fun signUp(
         event: StateEvent,
         email: String,
+        name: String,
         password: String
-    ) = authDataSource.signUp(email, password)
+    ) = authDataSource.signUp(email, name, password)
         .toDataState(event)
 
     suspend fun signIn(

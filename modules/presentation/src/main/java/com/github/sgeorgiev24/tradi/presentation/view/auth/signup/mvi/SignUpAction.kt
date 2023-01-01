@@ -6,6 +6,7 @@ sealed class SignUpAction {
     object OnDoneActionClick : SignUpAction()
     object OnSignInLinkClick : SignUpAction()
     data class OnEmailValueChange(val value: String) : SignUpAction()
+    data class OnNameValueChange(val value: String) : SignUpAction()
     data class OnPasswordValueChange(val value: String) : SignUpAction()
     data class OnConfirmPasswordValueChange(val value: String) : SignUpAction()
 }

@@ -31,12 +31,14 @@
     <!-- Validators -->
     <string name="validator_email_is_invalid">Email is invalid</string>
     <string name="validator_email_is_empty">Email is empty</string>
+    <string name="validator_name_is_empty">Name is empty</string>
     <string name="validator_password_too_short">Password is too short</string>
     <string name="validator_passwords_do_not_match">Passwords do not match</string>
 
     <!-- Sign up -->
     <string name="sign_up_title">Sign up</string>
     <string name="sign_up_email">Email</string>
+    <string name="sign_up_name">Name</string>
     <string name="sign_up_password">Password</string>
     <string name="sign_up_confirm_password">Confirm password</string>
     <string name="sign_up_sign_up_button">Sign up</string>

@@ -7,6 +7,7 @@ import com.github.sgeorgiev24.tradi.presentation.common.BaseViewModel
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.InputWrapper
 import com.github.sgeorgiev24.tradi.presentation.common.components.textfield.ScreenEvent
 import com.github.sgeorgiev24.tradi.presentation.common.util.validator.EmailValidator
+import com.github.sgeorgiev24.tradi.presentation.common.util.validator.NameValidator
 import com.github.sgeorgiev24.tradi.presentation.common.util.validator.PasswordValidator
 import com.github.sgeorgiev24.tradi.presentation.model.ComponentType
 import com.github.sgeorgiev24.tradi.presentation.model.UiEvent
@@ -42,6 +43,8 @@ constructor(
                 onPasswordValueChange(action.value)
             is SignUpAction.OnConfirmPasswordValueChange ->
                 onConfirmPasswordValueChange(action.value)
+            is SignUpAction.OnNameValueChange ->
+                onNameValueChange(action.value)
         }
     }
 
@@ -77,6 +80,13 @@ constructor(
         val errorResId = EmailValidator.getEmailErrorOrNull(value)
         updateState {
             copy(email = InputWrapper(value = value, errorResId = errorResId))
+        }
+    }
+
+    private fun onNameValueChange(value: String) {
+        val errorResId = NameValidator.getNameErrorOrNull(value)
+        updateState {
+            copy(name = InputWrapper(value = value, errorResId = errorResId))
         }
     }
 

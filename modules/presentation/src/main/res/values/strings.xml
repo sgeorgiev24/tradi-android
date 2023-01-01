@@ -49,4 +49,9 @@
     <string name="sign_in_password">Password</string>
     <string name="sign_in_sign_in_button">Sign in</string>
     <string name="sign_in_sign_up_link">Don\'t have an account? Sign up</string>
+
+    <!-- Bottom bar -->
+    <string name="bottom_bar_home">Home</string>
+    <string name="bottom_bar_analytics">Analytics</string>
+    <string name="bottom_bar_settings">Settings</string>
 </resources>

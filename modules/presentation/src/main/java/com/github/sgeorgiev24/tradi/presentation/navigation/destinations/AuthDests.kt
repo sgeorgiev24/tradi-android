@@ -17,4 +17,11 @@ sealed class AuthDests : NavigationAction {
         override val navAnimation: NavAnimation
             get() = NavAnimation.horizontalSlide()
     }
+
+    object Loading : AuthDests() {
+        override val route: String
+            get() = "loading"
+        override val navAnimation: NavAnimation
+            get() = NavAnimation.horizontalSlide()
+    }
 }

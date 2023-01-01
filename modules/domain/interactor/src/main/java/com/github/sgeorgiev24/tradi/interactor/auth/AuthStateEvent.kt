@@ -20,4 +20,10 @@ sealed class AuthStateEvent : StateEvent {
         override fun eventName() = "SignIn"
         override fun shouldDisplayProgressBar() = true
     }
+
+    object GetUser : AuthStateEvent() {
+        override fun errorInfo() = "Error while trying to get the user."
+        override fun eventName() = "GetUser"
+        override fun shouldDisplayProgressBar() = true
+    }
 }

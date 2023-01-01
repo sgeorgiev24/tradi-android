@@ -18,6 +18,7 @@ object AppDependencies {
         const val firebaseCrashlytics = "2.7.1"
         const val googleServices = "4.3.10"
         const val leakCanary = "2.2"
+        const val lottie = "5.2.0"
         const val timber = "4.7.1"
         const val splash = "1.0.0-beta02"
         const val splashScreen = "1.0.0"
@@ -35,6 +36,7 @@ object AppDependencies {
     const val lumberjack = "com.github.MFlisar.Lumberjack:lumberjack-library:${Version.lumberJack}"
     const val splash = "androidx.core:core-splashscreen:${Version.splash}"
     const val lifecycleLog = "com.github.Chesire:LifecykleLog:${Version.lifecycleLog}"
+    const val lottie = "com.airbnb.android:lottie-compose:${Version.lottie}"
     const val chromeTabs = "androidx.browser:browser:${Version.chromeTabs}"
 
     const val crypto = "com.google.crypto.tink:tink-android:1.7.0"

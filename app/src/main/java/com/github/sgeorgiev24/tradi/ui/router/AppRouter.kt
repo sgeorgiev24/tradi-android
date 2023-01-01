@@ -1,7 +1,10 @@
 @file:OptIn(ExperimentalMaterialApi::class)
 package com.github.sgeorgiev24.tradi.ui.router
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.AnimationSpec
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,7 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.plusAssign
+import com.github.sgeorgiev24.tradi.presentation.common.components.bottombar.BottomNavigationItem
+import com.github.sgeorgiev24.tradi.presentation.common.components.bottombar.TradiBottomBar
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationCommand
 import com.github.sgeorgiev24.tradi.presentation.navigation.NavigationDispatcher
 import com.github.sgeorgiev24.tradi.presentation.navigation.destinations.AuthDests
@@ -36,6 +42,10 @@ fun AppRouter(
     navController.navigatorProvider += bottomSheetNavigator
 
     val scaffoldState = rememberScaffoldState()
+
+    val showBottomBar = navController
+        .currentBackStackEntryAsState().value?.destination?.route in
+        BottomNavigationItem.values().map { it.destination.route }
 
     LaunchedEffect(key1 = Unit) {
         navigationDispatcher.navigationCommands.collectLatest { navigationCommand ->
@@ -63,6 +73,17 @@ fun AppRouter(
                 scaffoldState = scaffoldState,
                 modifier = Modifier
                     .statusBarsPadding(),
+                bottomBar = {
+                    AnimatedVisibility(
+                        visible = showBottomBar,
+                        enter = expandVertically(),
+                        exit = shrinkVertically()
+                    ) {
+                        navController.currentBackStackEntry?.let {
+                            TradiBottomBar(navBackStackEntry = it)
+                        }
+                    }
+                },
                 content = { padding ->
                     AnimatedNavHost(
                         modifier = Modifier.padding(padding),
@@ -94,6 +115,12 @@ private fun NavGraphBuilder.authDestinations() {
 private fun NavGraphBuilder.mainDestinations() {
     composableHolder(MainDests.Home) {
         Text("Home screen")
+    }
+    composableHolder(MainDests.Analytics) {
+        Text("Analytics screen")
+    }
+    composableHolder(MainDests.Settings) {
+        Text("Settings screen")
     }
 }
 

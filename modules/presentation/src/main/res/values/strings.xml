@@ -54,4 +54,8 @@
     <string name="bottom_bar_home">Home</string>
     <string name="bottom_bar_analytics">Analytics</string>
     <string name="bottom_bar_settings">Settings</string>
+
+    <!-- Home -->
+    <string name="home_title">Hey, %s</string>
+    <string name="home_overview">Overview</string>
 </resources>

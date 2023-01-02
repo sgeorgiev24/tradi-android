@@ -26,6 +26,7 @@ import com.github.sgeorgiev24.tradi.presentation.navigation.wrapper.composableHo
 import com.github.sgeorgiev24.tradi.presentation.view.auth.loading.AuthLoadingScreen
 import com.github.sgeorgiev24.tradi.presentation.view.auth.signin.SignInScreen
 import com.github.sgeorgiev24.tradi.presentation.view.auth.signup.SignUpScreen
+import com.github.sgeorgiev24.tradi.presentation.view.home.HomeScreen
 import com.github.sgeorgiev24.tradi.theme.TradiTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -114,7 +115,7 @@ private fun NavGraphBuilder.authDestinations() {
 
 private fun NavGraphBuilder.mainDestinations() {
     composableHolder(MainDests.Home) {
-        Text("Home screen")
+        HomeScreen()
     }
     composableHolder(MainDests.Analytics) {
         Text("Analytics screen")

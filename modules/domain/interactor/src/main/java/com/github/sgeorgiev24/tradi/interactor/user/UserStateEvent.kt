@@ -11,4 +11,10 @@ sealed class UserStateEvent : StateEvent {
         override fun eventName() = "SetTmpUser"
         override fun shouldDisplayProgressBar() = true
     }
+
+    object GetTmpUser : UserStateEvent() {
+        override fun errorInfo() = "Error while trying to get the user."
+        override fun eventName() = "GetTmpUser"
+        override fun shouldDisplayProgressBar() = true
+    }
 }

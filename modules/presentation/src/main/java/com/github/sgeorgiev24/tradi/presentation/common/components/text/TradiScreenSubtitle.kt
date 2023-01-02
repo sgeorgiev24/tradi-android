@@ -9,7 +9,7 @@ import androidx.compose.ui.text.style.TextAlign
 import com.github.sgeorgiev24.tradi.theme.Typographs
 
 @Composable
-fun TradiScreenTitle(
+fun TradiScreenSubtitle(
     modifier: Modifier = Modifier,
     textAlign: TextAlign? = null,
     @StringRes textResId: Int
@@ -18,12 +18,12 @@ fun TradiScreenTitle(
         modifier = modifier,
         text = stringResource(id = textResId),
         textAlign = textAlign,
-        style = Typographs.displayLarge
+        style = Typographs.displayMedium
     )
 }
 
 @Composable
-fun TradiScreenTitle(
+fun TradiScreenSubtitle(
     modifier: Modifier = Modifier,
     textAlign: TextAlign? = null,
     text: String
@@ -32,6 +32,6 @@ fun TradiScreenTitle(
         modifier = modifier,
         text = text,
         textAlign = textAlign,
-        style = Typographs.displayLarge
+        style = Typographs.displayMedium
     )
 }

@@ -27,6 +27,13 @@ constructor(
         }
     }
 
+    override suspend fun handleActions(action: HomeAction) {
+        when (action) {
+            HomeAction.OnAddExpenseClick -> {}
+            HomeAction.OnAddIncomeClick -> {}
+        }
+    }
+
     private suspend fun getTmpUser() {
         getTmpUser(UserStateEvent.GetTmpUser).also { dataState ->
             dataState.data?.let {

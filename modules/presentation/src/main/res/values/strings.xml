@@ -58,4 +58,6 @@
     <!-- Home -->
     <string name="home_title">Hey, %s</string>
     <string name="home_overview">Overview</string>
+    <string name="home_add_income">Add income</string>
+    <string name="home_add_expense">Add expense</string>
 </resources>

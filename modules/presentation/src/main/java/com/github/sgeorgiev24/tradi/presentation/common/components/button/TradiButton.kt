@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import com.github.sgeorgiev24.tradi.theme.Colors
 import com.github.sgeorgiev24.tradi.theme.Dimens
@@ -21,7 +22,8 @@ fun TradiButton(
     modifier: Modifier = Modifier,
     @StringRes titleResId: Int,
     enabled: Boolean = true,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    textStyle: TextStyle = Typographs.button1,
 ) {
     Button(
         modifier = modifier
@@ -36,7 +38,7 @@ fun TradiButton(
                 .wrapContentWidth()
                 .padding(vertical = Dimens.padding_small),
             textAlign = TextAlign.Center,
-            style = Typographs.button1,
+            style = textStyle,
             text = stringResource(id = titleResId),
             color = Colors.onSecondary
         )
